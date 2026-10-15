@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="getStarted.css">
+</head>
+<body>
+    <nav>
+        <a class="pr" href="nav.html" >
+            <h2>PremiceX</h2>
+        </a>
+
+        <div class="links" >
+            <a class="linkh" href="Home.html" >Home</a>
+            <a href="#">About</a>
+            <a href="#" >Services</a>
+            <a href="#" >Contacts</a>s
+        </div>
+
+        <a class="pr" href="getStarted.html" >
+            <button>Get Started</button>
+        </a>
+        
+    </nav>
+    <div class="box div-box" >
+        <h2 class="titlepx" >Welcome back</h2>
+        
+
+        <input class="username"
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+        >
+
+        <div class="input-box" >
+            
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+            <span class="eye" id="eye">&#x1F441</span>
+        </div>
+
+        <div class="strength" >
+            <div class="bar" id="bar" ></div>
+        </div>
+    
+        <div class="message" id="message" >
+            Start typing...
+        </div>
+        <button class="signIn-js" id="loginBtn"  >Log In</button>
+    </div>
+
+    <script type="module" src="signin.js" ></script>
+</body>
+</html>
