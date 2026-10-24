@@ -1,0 +1,68 @@
+* {
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    width: 140px;
+
+}
+
+.dropdown button {
+    width:100px;
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color:#444;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px #00000014;
+}
+
+.dropdown button:hover {
+    background-color: #f7f7f7;
+}
+
+.menu {
+    position: absolute;
+    top:110%;
+    left:0;
+    width: 160px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px #0000001a;
+    padding: 6px 0;
+    /* le code pour ne plus le rendre visible si on ne clique pas*/
+    display: none; /* ca va faire disparaitre tout*/
+    
+}
+.menu li {
+    list-style: none;  /*pour enlever les points de list*/
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+.menu li:hover{
+    background-color: lightgray;
+}
+.menu li.delete {
+    color: red;
+    cursor: not-allowed;
+}
+/*le code en bas c pour faire apparaitre le menu*/
+.dropdown:focus-within .menu{
+    display: block;
+}
