@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                background: #111;
+                font-family: sans-serif;
+                color: white;
+            }
+
+            .card {
+                width: 300px;
+                margin: 20px;
+            }
+
+            /* Les blocs gris */
+            .skeleton {
+                background: #262626;
+                border-radius: 8px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* L'effet de brillance qui passe */
+            .skeleton::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                transform: translateX(-100%);
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+                animation: shimmer 1.5s infinite;
+            }
+
+            @keyframes shimmer {
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+
+            .sk-image {
+                height: 170px;
+            }
+
+            .sk-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+
+            .sk-line {
+                height: 14px;
+                margin-top: 8px;
+            }
+
+            .sk-line.short {
+                width: 60%;
+            }
+
+            .row {
+                display: flex;
+                gap: 10px;
+                margin-top: 12px;
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Squelette -->
+        <div id="skeleton" class="card">
+            <div class="skeleton sk-image"></div>
+            <div class="row">
+                <div class="skeleton sk-avatar"></div>
+                <div style="flex:1">
+                    <div class="skeleton sk-line"></div>
+                    <div class="skeleton sk-line short"></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Vrai contenu -->
+        <div id="content" class="card hidden">
+            <img src="https://picsum.photos/300/170" width="300" style="border-radius:8px">
+            <h3>HTML and CSS </h3>
+            <p>NewDev</p>
+        </div>
+
+        <script>
+            // On simule un chargement de 3 secondes
+            setTimeout(() => {
+                document.getElementById("skeleton").classList.add("hidden");
+                document.getElementById("content").classList.remove("hidden");
+            }, 10000);
+        </script>
+    </body>
+
+</html>
